@@ -1,0 +1,143 @@
+<!-- ####################### Consent ####################### -->
+<div class="consent" style="width: 1000px;">
+  <!-- Text box for the splash page -->
+  <div id="consent-text" style="text-align:left; border:0px solid; padding:10px;  width:800px; font-size:70%">
+
+    <p align="right">Version: September 29, 2020</p>
+
+    <p align="center"><b>McGill University Health Centre<br><br>
+        INFORMATION AND CONSENT FORM<br>
+        </b>Healthy volunteer<br>
+    </p>
+
+    <p><br><b>Research Study Title:</b> Multimodal Neuroimaging of Perceptual Inference
+    <br><b>Protocol number:</b> 2021-7130
+    <br><b>Researchers responsible for the research study:</b> Sylvain Baillet, Ph.D. and Max Levinson
+    </p>
+
+    <p><b>INTRODUCTION</b></p>
+    <p>You have been invited to participate in this behavioral study. Please read this consent information
+      attentively: it explains the procedure and your rights to information, confidentiality and of withdrawing from the
+      study at any time.</p>
+
+    <p><b>PURPOSE OF THE RESEARCH STUDY</b></p>
+    <p>This study seeks to better understand human sensory perception, including vision and hearing. For this research study, we will recruit
+      approximately 500 participants, men and women, aged between 18-65.</p>
+
+    <p><b>DESCRIPTION OF THE RESEARCH PROCEDURES</b></p>
+    <p>This research study will take place on your home computer. Your participation will include one session lasting between 10-30 minutes.
+      In this study you will participate in one or more simple computer-based perception tasks on your home computer's internet browser.
+      Each task is expected to last no longer than 10 minutes. You will view pictures or hear recordings and answer questions about what you perceive.</p>
+
+    <p><b>BENEFITS ASSOCIATED WITH THE RESEARCH STUDY</b></p>
+    <p>There is no direct benefit to you in participating in this research besides monetary compensation. However, we hope that the study
+      results will contribute to the advancement of scientific knowledge.</p>
+
+    <p><b>RISKS ASSOCIATED WITH THE RESEARCH STUDY</b></p>
+    <p>We do not foresee any risks associated with this study.</p>
+
+    <p><b>VOLUNTARY PARTICIPATION AND THE RIGHT TO WITHDRAW</b></p>
+    <p> Your participation in this study is voluntary. Therefore, you may refuse to participate. You may also withdraw from the <i>ongoing</i>
+      project at any time, without giving any reason, by closing your internet browser. Any useful data obtained prior to your withdrawal
+      will be kept on record and used for research purposes and data analysis. This data will be anonymous and cannot be used to identify you.</p>
+
+    <p><b>CONFIDENTIALITY</b></p>
+    <p>Confidentiality of your personal information will be protected: the only persons who will be aware of your
+      identity and demographic information will be the principal investigator and his co-investigators. Only anonymized
+      data will be used for publication purposes, and this anonymized data might be made available in a data repository
+      to other researchers for subsequent studies. Study data will be stored by the investigators for at least 10 years.</p>
+
+    <p><b>FUNDING OF THE RESEARCH PROJECT</b></p>
+    <p>The researcher and the institution have received funding from NSERC Discovery, Canada Research Chair, and Healthy Brains for Healthy Lives
+      to conduct this research project.</p>
+    
+    <p><b>CONFLICT OF INTERESTS</b></p>
+    <p>The researchers have no conflict of interest to declare.</p>
+
+    <p><b>COMPENSATION</b></p>
+    <p>You will receive a total compensation in the amount of $15 CAD per hour, proportional to the estimated amount of time required to complete
+      your assigned task(s). If you withdraw before study completion, you will receive an amount proportional to your participation. However, if
+      you fail to follow study instructions, your compensation may be withheld.</p>
+
+    <p><b>SHARING STUDY RESULTS</b></p>
+    <p>Results from this study will be presented at conferences and published in journals.</p>
+
+    <p><b>CONTACT INFORMATION</b></p>
+    <p>For enquiries about the project the principal investigator Sylvain Baillet can be reached by phone: 514-398-5469
+      or email sylvain.baillet@mcgill.ca. You are also informed that you should not sign this consent form without
+      having had a chance to thoroughly examine the consent form.</p>
+
+    <p><b>OVERVIEW OF ETHICAL ASPECTS OF THE RESEARCH</b></p>
+    <p>The McGill University Health Centre Research Ethics Board reviewed this research and is responsible for monitoring the study.</p>
+
+    <br><br>
+    <p><button type="button" id="next_page" class='jspsych-btn' onclick="consentNextPage()">Next</button></p>
+  </div>
+  <br><br>
+  <div id="consent-sign"
+    style="text-align:left; border:0px solid; padding:10px;  width:800px; font-size:70%; display:none">
+    <p align="right">Version: September 29, 2020</p>
+
+    <p><b>Research Study Title:</b> Multimodal Neuroimaging of Perceptual Inference</p>
+    <p><b>SIGNATURE</b></p>
+    <p><b><i>Signature of the participant</i></b></p>
+
+    <p>I have reviewed the information and consent form. Both the research study and the information and consent form were explained to me.
+      My questions were answered, and I was given sufficient time to make a decision. After reflection, I consent to participate in this
+      research study in accordance with the conditions stated above.</p>
+    
+    <p><br>I agree to secondary data usage (use of coded data for future projects approved by a research ethics board).</p>
+    <p><input type="radio" name="secondary_data_use" value="accept" />Yes<br>
+      <input type="radio" name="secondary_data_use" value="decline" />No
+    </p>
+    <p>I consent to participate in this study.</p>
+    <p><input type="radio" name="consent" value="accept" />Yes<br>
+      <input type="radio" name="consent" value="decline" />No
+    </p>
+    <p><button type="button" id="submit_consent" class='jspsych-btn' disabled="disabled"
+        onclick="saveResponses()">Submit</button></p>
+
+    <script>
+      // disable submit button until both questions are answered
+      (function () {
+        $('div input').on("click change", function () {
+
+          var numchecked = 0;
+          $('div input').each(function () {
+            if ($(this)[0].checked) {
+              numchecked += 1;
+            }
+          });
+
+          if (numchecked < 2) {
+            $('#submit_consent').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+          } else { // if both sets of radio buttons have a choice selected
+            $('#submit_consent').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+          }
+        });
+      })()
+    </script>
+
+    <br><br>
+    <p><button type="button" id="previous_page" class='jspsych-btn' onclick="consentPreviousPage()">Previous</button>
+    </p>
+  </div>
+</div>
+
+
+<script>
+  function consentNextPage() {
+    document.getElementById("consent-text").style.display = 'none';
+    document.getElementById("consent-sign").style.display = '';
+  }
+
+  function consentPreviousPage() {
+    document.getElementById("consent-sign").style.display = 'none';
+    document.getElementById("consent-text").style.display = '';
+  }
+
+  function saveResponses() {
+    secondary_data_response = $('input[name=secondary_data_use]:checked').val();
+    consent_response = $('input[name=consent]:checked').val();
+  }
+</script>

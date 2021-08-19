@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My experiment</title>
+    <script src="jspsych-6.2.0/jspsych.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-fullscreen.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-resize.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-resize_max_origin.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-psychophysics-master/jspsych-psychophysics.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-external-html.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-survey-multi-select.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-html-slider-response.js"></script>
+    <script src="jspsych-6.2.0/plugins/jspsych-call-function.js"></script>
+    <script src="svg-2.7.1.min.js"></script>
+    <link href="jspsych-6.2.0/css/jspsych.css" rel="stylesheet" type="text/css">
+    </link>
+
+    <!-- FOR VIRTUAL CHINREST; OWNLOADED LOCALLY -->
+    <!-- jQuery -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery-ui.min.js"></script>
+
+    <!-- css -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="jquery/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <!-- script -->
+    <style>
+        html {
+            background-color: grey;
+        }
+    </style>
+
+    <!-- JATOS -->
+    <script src="jatos.js"></script>
+</head>
+
+<body></body>
+
+<script>
+    jatos.onLoad(function() {
+
+    var script1 = document.createElement('script');
+    script1.type = 'text/javascript';
+    script1.src = 'trialsfunc.js';
+    document.body.appendChild(script1);
+    var script2 = document.createElement('script');
+    script2.type = 'text/javascript';
+    script2.src = 'canvasArrowhead.js';
+    document.body.appendChild(script2);
+    var script3 = document.createElement('script');
+    script3.type = 'text/javascript';
+    script3.src = 'virtual_chinrest_ML.js';
+    document.body.appendChild(script3);
+
+    script1.onload = function() {
+    var script4 = document.createElement('script');
+    script4.type = 'text/javascript';
+    script4.src = 'UI_master.js';
+    document.body.appendChild(script4);
+    }
+
+    });
+</script>
+
+</script>
+
+</html>
