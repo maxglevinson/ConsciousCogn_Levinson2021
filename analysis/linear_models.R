@@ -11,7 +11,7 @@ setwd("ROOTDIR/data") # replace ROOTDIR with your local path
 df_full <- read.csv('./full_behavior.csv',sep = ",",stringsAsFactors = FALSE)
 
 # take out control trials
-df = df_full[df$luminance != 1 & df$luminance != 2, ]
+df = df_full[df_full$luminance != 1 & df_full$luminance != 2, ]
 
 ###### MODEL 1: REACTION TIME ######
 # fit stepwise linear regressions
